@@ -4,8 +4,8 @@ x-base_service: &base_service
     ports:
       - "${WEBUI_PORT:-7860}:7860"
     volumes:
-      - &v1 ./data:/data
-      - &v2 ./output:/output
+      - &v1 /dockermounts/sd/data:/data
+      - &v2 /dockermounts/sd/output:/output
     stop_signal: SIGKILL
     tty: true
     deploy:
